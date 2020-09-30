@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<!--
+		One or more remote elements may be specified. Each remote
+		element specifies a Git URL shared by one or more projects and
+		(optionally) the Gerrit review server those projects upload
+		changes through.
+	-->
+	<remote name="github-tompreston"
+		fetch="https://github.com/tompreston/" />
+
+	<!--
+		At most one default element may be specified. Its remote and
+		revision attributes are used when a project element does not
+		specify its own remote or revision attribute.
+	-->
+	<default remote="github-tompreston"
+		revision="master"
+		sync-j="4" />
+
+	<!--
+		One or more project elements may be specified. Each element
+		describes a single Git repository to be cloned into the repo
+		client workspace. You may specify Git-submodules by creating a
+		nested project. Git-submodules will be automatically recognized
+		and inherit their parent's attributes, but those may be
+		overridden by an explicitly specified project element.
+	-->
+	<project path="notes" name="notes" />
+	<project path="dotfiles" name="dotfiles" />
+</manifest>
