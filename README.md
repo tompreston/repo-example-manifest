@@ -37,5 +37,8 @@ Then create a clean working directory, init .repo and sync:
 At the init stage, the `repo` wrapper will first download git-repo itself, then
 the manifest. Sync will pull the projects.
 
+# Branching
+TODO
+
 # Other links
 - https://android.googlesource.com/platform/docs/source.android.com/+/ics-mr1/src/source/using-repo.md
