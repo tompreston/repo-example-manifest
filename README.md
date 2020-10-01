@@ -84,5 +84,28 @@ the `remote` element in the manifest. It's for gerrit, which I won't go into
 here.
 
 
+# Adding new remotes (to store local changes)
+Create some remotes (here is an example, but you might do this on github):
+
+     mkdir ../local-remote/tompreston
+     git clone dotfiles ../local-remote/tompreston/dotfiles
+     git clone notes ../local-remote/tompreston/notes
+
+For each project, add the new remote:
+
+    repo forall -c 'git remote add local ../local-remote/$REPO_PROJECT'
+
+Then push our branch with the changes:
+
+    repo forall -c 'git push local HEAD'
+
+Or pull in branches from the remote and rebase them:
+
+    repo forall -c 'git fetch local'
+    repo checkout tpreston/repo-example-add-comments
+    repo rebase
+
+
 # Other links
 - https://android.googlesource.com/platform/docs/source.android.com/+/ics-mr1/src/source/using-repo.md
+- Android git and repo guide https://wladimir-tm4pda.github.io/source/git-repo.html
