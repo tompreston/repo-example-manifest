@@ -93,7 +93,7 @@ Create some remotes (here is an example, but you might do this on github):
 
 For each project, add the new remote:
 
-    repo forall -c 'git remote add local ../local-remote/$REPO_PROJECT'
+    repo forall -c 'git remote add local file:///home/tpreston/w/repo-example/local-remote/$REPO_PROJECT'
 
 Then push our branch with the changes:
 
