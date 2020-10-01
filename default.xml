@@ -6,15 +6,15 @@
 		(optionally) the Gerrit review server those projects upload
 		changes through.
 	-->
-	<remote name="github-tompreston"
-		fetch="https://github.com/tompreston/" />
+	<remote name="github-ssh"
+		fetch="ssh://git@github.com" />
 
 	<!--
 		At most one default element may be specified. Its remote and
 		revision attributes are used when a project element does not
 		specify its own remote or revision attribute.
 	-->
-	<default remote="github-tompreston"
+	<default remote="github-ssh"
 		revision="master"
 		sync-j="4" />
 
@@ -26,6 +26,6 @@
 		and inherit their parent's attributes, but those may be
 		overridden by an explicitly specified project element.
 	-->
-	<project path="notes" name="notes" />
-	<project path="dotfiles" name="dotfiles" />
+	<project name="tompreston/notes" path="notes" />
+	<project name="tompreston/dotfiles" path="dotfiles" />
 </manifest>
