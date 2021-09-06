@@ -2,7 +2,8 @@
 This is an example manifest for Google's git-repo tool. Use this to get started
 learning about git-repo.
 
-It describes a project consisting of two git repos (not git-repo):
+It describes a project consisting of two git projects (aka "git repository",
+but not to be confused with the tool "git-repo"):
 
     github.com/tompreston/notes
     github.com/tompreston/dotfiles
@@ -25,7 +26,7 @@ And learn about the manifest document format:
 
     https://gerrit.googlesource.com/git-repo/+/master/docs/manifest-format.md
 
-Write the manifest (this repo).
+Write the manifest (that's what this project contains).
 
 Then create a clean working directory, init .repo and sync:
 
@@ -34,8 +35,9 @@ Then create a clean working directory, init .repo and sync:
     repo init -u https://github.com/tompreston/repo-example-manifest
     repo sync
 
-At the init stage, the `repo` wrapper will first download git-repo itself, then
-the manifest. Sync will pull the projects.
+At the init stage, the lightweight `repo` wrapper will first download the full
+git-repo into the local directory, then the manifest. Sync will pull the
+projects.
 
 Run `repo` and `repo help` to learn more about git-repo commands:
 
